@@ -44,7 +44,7 @@ save_cache() {
 
 exists_cache() {
   if [ -z "$1" ]; then exit 1; fi
-  [ -n "$(mc stat "${BUILDKITE_PLUGIN_MINIO_CACHE_ALIAS}/${BUILDKITE_PLUGIN_S3_CACHE_BUCKET}/$(build_key "$1")")" ]
+  [ -n "$(mc find "${BUILDKITE_PLUGIN_MINIO_CACHE_ALIAS}/${BUILDKITE_PLUGIN_S3_CACHE_BUCKET}/$(build_key "$1")")" ]
 }
 
 OPCODE="$1"
